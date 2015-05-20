@@ -13,7 +13,6 @@
 		700D7CDC1B0A90FA0099FA27 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 700D7CDB1B0A90FA0099FA27 /* Images.xcassets */; };
 		700D7CDF1B0A90FA0099FA27 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 700D7CDD1B0A90FA0099FA27 /* LaunchScreen.xib */; };
 		700D7CEB1B0A90FA0099FA27 /* RPI_CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700D7CEA1B0A90FA0099FA27 /* RPI_CalculatorTests.swift */; };
-		700D7CF51B0A91CE0099FA27 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 700D7CF41B0A91CE0099FA27 /* logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +36,6 @@
 		700D7CE41B0A90FA0099FA27 /* RPI CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RPI CalculatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		700D7CE91B0A90FA0099FA27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		700D7CEA1B0A90FA0099FA27 /* RPI_CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPI_CalculatorTests.swift; sourceTree = "<group>"; };
-		700D7CF41B0A91CE0099FA27 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +77,6 @@
 		700D7CD11B0A90FA0099FA27 /* RPI Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				700D7CF41B0A91CE0099FA27 /* logo.png */,
 				700D7CD41B0A90FA0099FA27 /* AppDelegate.swift */,
 				700D7CD61B0A90FA0099FA27 /* ViewController.swift */,
 				700D7CD81B0A90FA0099FA27 /* Main.storyboard */,
@@ -195,7 +192,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				700D7CF51B0A91CE0099FA27 /* logo.png in Resources */,
 				700D7CDA1B0A90FA0099FA27 /* Main.storyboard in Resources */,
 				700D7CDF1B0A90FA0099FA27 /* LaunchScreen.xib in Resources */,
 				700D7CDC1B0A90FA0099FA27 /* Images.xcassets in Resources */,
@@ -415,6 +411,7 @@
 				700D7CF01B0A90FA0099FA27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		700D7CF11B0A90FA0099FA27 /* Build configuration list for PBXNativeTarget "RPI CalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +420,7 @@
 				700D7CF31B0A90FA0099FA27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
