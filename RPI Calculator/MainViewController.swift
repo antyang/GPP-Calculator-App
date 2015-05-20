@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
     let rpiorange = UIColor(red: 255/255, green: 121/255, blue: 0, alpha: 1)
     var temp: Int?
@@ -19,6 +19,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var GPP: UILabel!
     @IBOutlet weak var degswitch: UISegmentedControl!
     
+    
+    // -----
+    var transitionManager = MenuTransitionManager()
+    
+    @IBAction func unwindToMainViewController (sender: UIStoryboardSegue){
+        // bug? exit segue doesn't dismiss so we do it manually...
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let menu = segue.destinationViewController as! MenuViewController
+        menu.transitioningDelegate = self.transitionManager
+    }
+    
+    // -----
+    
     @IBAction func clear(sender: UIBarButtonItem) {
         errorslabel.text = ""
         rhinput.text = ""
@@ -27,7 +43,12 @@ class ViewController: UIViewController {
         
     }
     @IBAction func calculate(sender: UIButton) {
+        GPP.hidden = false
         
+        
+        if tempinput.text == "" || rhinput.text == "" {
+            GPP.hidden = true
+        }
         
         var rhinputtext = rhinput.text
         var convertedrh = rhinputtext.toInt()
@@ -37,224 +58,224 @@ class ViewController: UIViewController {
         if convertedtemp != nil && convertedrh != nil {
             
             if convertedrh! <= 10 && convertedtemp! <= 30 {
-                GPP.text = "3"
+                GPP.text = "3 grains per lb"
             }
             else if convertedrh! <= 10 && convertedtemp! > 30 && convertedtemp! <= 40 {
-                GPP.text = "4"
+                GPP.text = "4 grains per lb"
             }
             else if convertedrh! <= 10 && convertedtemp! > 40 && convertedtemp! <= 50 {
-                GPP.text = "6"
+                GPP.text = "6 grains per lb"
             }
             else if convertedrh! <= 10 && convertedtemp! > 50 && convertedtemp! <= 60 {
-                GPP.text = "8"
+                GPP.text = "8 grains per lb"
             }
             else if convertedrh! <= 10 && convertedtemp! > 60 && convertedtemp! <= 70 {
-                GPP.text = "11"
+                GPP.text = "11 grains per lb"
             }
             else if convertedrh! <= 10 && convertedtemp! > 70 && convertedtemp! <= 80 {
-                GPP.text = "16"
+                GPP.text = "16 grains per lb"
             }
             else if convertedrh! <= 10 && convertedtemp! > 80 && convertedtemp! <= 90 {
-                GPP.text = "21"
+                GPP.text = "21 grains per lb"
             }
             else if convertedrh! <= 10 && convertedtemp! > 90 && convertedtemp! <= 100 {
-                GPP.text = "29"
+                GPP.text = "29 grains per lb"
             }
             else if convertedrh! > 10 && convertedrh! <= 20 && convertedtemp! <= 30 {
-                GPP.text = "5"
+                GPP.text = "5 grains per lb"
             }
             else if convertedrh! > 10 && convertedrh! <= 20 && convertedtemp! > 30 && convertedtemp! <= 40 {
-                GPP.text = "7"
+                GPP.text = "7 grains per lb"
             }
             else if convertedrh! > 10 && convertedrh! <= 20 && convertedtemp! > 40 && convertedtemp! <= 50 {
-                GPP.text = "10"
+                GPP.text = "10 grains per lb"
             }
             else if convertedrh! > 10 && convertedrh! <= 20 && convertedtemp! > 50 && convertedtemp! <= 60 {
-                GPP.text = "16"
+                GPP.text = "16 grains per lb"
             }
             else if convertedrh! > 10 && convertedrh! <= 20 && convertedtemp! > 60 && convertedtemp! <= 70 {
-                GPP.text = "21"
+                GPP.text = "21 grains per lb"
             }
             else if convertedrh! > 10 && convertedrh! <= 20 && convertedtemp! > 70 && convertedtemp! <= 80 {
-                GPP.text = "30"
+                GPP.text = "30 grains per lb"
             }
             else if convertedrh! > 10 && convertedrh! <= 20 && convertedtemp! > 80 && convertedtemp! <= 90 {
-                GPP.text = "42"
+                GPP.text = "42 grains per lb"
             }
             else if convertedrh! > 10 && convertedrh! <= 20 && convertedtemp! > 90 && convertedtemp! <= 100 {
-                GPP.text = "58"
+                GPP.text = "58 grains per lb"
             }
             
             else if convertedrh! > 20 && convertedrh! <= 30 && convertedtemp! <= 30 {
-                GPP.text = "7"
+                GPP.text = "7 grains per lb"
             }
             else if convertedrh! > 20 && convertedrh! <= 30 && convertedtemp! > 30 && convertedtemp! <= 40 {
-                GPP.text = "11"
+                GPP.text = "11 grains per lb"
             }
             else if convertedrh! > 20 && convertedrh! <= 30 && convertedtemp! > 40 && convertedtemp! <= 50 {
-                GPP.text = "14"
+                GPP.text = "14 grains per lb"
             }
             else if convertedrh! > 20 && convertedrh! <= 30 && convertedtemp! > 50 && convertedtemp! <= 60 {
-                GPP.text = "22"
+                GPP.text = "22 grains per lb"
             }
             else if convertedrh! > 20 && convertedrh! <= 30 && convertedtemp! > 60 && convertedtemp! <= 70 {
-                GPP.text = "34"
+                GPP.text = "34 grains per lb"
             }
             else if convertedrh! > 20 && convertedrh! <= 30 && convertedtemp! > 70 && convertedtemp! <= 80 {
-                GPP.text = "46"
+                GPP.text = "46 grains per lb"
             }
             else if convertedrh! > 20 && convertedrh! <= 30 && convertedtemp! > 80 && convertedtemp! <= 90 {
-                GPP.text = "65"
+                GPP.text = "65 grains per lb"
             }
             else if convertedrh! > 20 && convertedrh! <= 30 && convertedtemp! > 90 && convertedtemp! <= 100 {
-                GPP.text = "87"
+                GPP.text = "87 grains per lb"
             }
             
             else if convertedrh! > 30 && convertedrh! <= 40 && convertedtemp! <= 30 {
-                GPP.text = "9"
+                GPP.text = "9 grains per lb"
             }
             else if convertedrh! > 30 && convertedrh! <= 40 && convertedtemp! > 30 && convertedtemp! <= 40 {
-                GPP.text = "14"
+                GPP.text = "14 grains per lb"
             }
             else if convertedrh! > 30 && convertedrh! <= 40 && convertedtemp! > 40 && convertedtemp! <= 50 {
-                GPP.text = "20"
+                GPP.text = "20 grains per lb"
             }
             else if convertedrh! > 30 && convertedrh! <= 40 && convertedtemp! > 50 && convertedtemp! <= 60 {
-                GPP.text = "30"
+                GPP.text = "30 grains per lb"
             }
             else if convertedrh! > 30 && convertedrh! <= 40 && convertedtemp! > 60 && convertedtemp! <= 70 {
-                GPP.text = "44"
+                GPP.text = "44 grains per lb"
             }
             else if convertedrh! > 30 && convertedrh! <= 40 && convertedtemp! > 70 && convertedtemp! <= 80 {
-                GPP.text = "62"
+                GPP.text = "62 grains per lb"
             }
             else if convertedrh! > 30 && convertedrh! <= 40 && convertedtemp! > 80 && convertedtemp! <= 90 {
-                GPP.text = "85"
+                GPP.text = "85 grains per lb"
             }
             else if convertedrh! > 30 && convertedrh! <= 40 && convertedtemp! > 90 && convertedtemp! <= 100 {
-                GPP.text = "116"
+                GPP.text = "116 grains per lb"
             }
             
             else if convertedrh! > 40 && convertedrh! <= 50 && convertedtemp! <= 30 {
-                GPP.text = "12"
+                GPP.text = "12 grains per lb"
             }
             else if convertedrh! > 40 && convertedrh! <= 50 && convertedtemp! > 30 && convertedtemp! <= 40 {
-                GPP.text = "18"
+                GPP.text = "18 grains per lb"
             }
             else if convertedrh! > 40 && convertedrh! <= 50 && convertedtemp! > 40 && convertedtemp! <= 50 {
-                GPP.text = "26"
+                GPP.text = "26 grains per lb"
             }
             else if convertedrh! > 40 && convertedrh! <= 50 && convertedtemp! > 50 && convertedtemp! <= 60 {
-                GPP.text = "39"
+                GPP.text = "39 grains per lb"
             }
             else if convertedrh! > 40 && convertedrh! <= 50 && convertedtemp! > 60 && convertedtemp! <= 70 {
-                GPP.text = "55"
+                GPP.text = "55 grains per lb"
             }
             else if convertedrh! > 40 && convertedrh! <= 50 && convertedtemp! > 70 && convertedtemp! <= 80 {
-                GPP.text = "78"
+                GPP.text = "78 grains per lb"
             }
             else if convertedrh! > 40 && convertedrh! <= 50 && convertedtemp! > 80 && convertedtemp! <= 90 {
-                GPP.text = "108"
+                GPP.text = "108 grains per lb"
             }
             else if convertedrh! > 40 && convertedrh! <= 50 && convertedtemp! > 90 && convertedtemp! <= 100 {
-                GPP.text = "147"
+                GPP.text = "147 grains per lb"
             }
             
             else if convertedrh! > 50 && convertedrh! <= 60 && convertedtemp! <= 30 {
-                GPP.text = "14"
+                GPP.text = "14 grains per lb"
             }
             else if convertedrh! > 50 && convertedrh! <= 60 && convertedtemp! > 30 && convertedtemp! <= 40 {
-                GPP.text = "22"
+                GPP.text = "22 grains per lb"
             }
             else if convertedrh! > 50 && convertedrh! <= 60 && convertedtemp! > 40 && convertedtemp! <= 50 {
-                GPP.text = "32"
+                GPP.text = "32 grains per lb"
             }
             else if convertedrh! > 50 && convertedrh! <= 60 && convertedtemp! > 50 && convertedtemp! <= 60 {
-                GPP.text = "48"
+                GPP.text = "48 grains per lb"
             }
             else if convertedrh! > 50 && convertedrh! <= 60 && convertedtemp! > 60 && convertedtemp! <= 70 {
-                GPP.text = "66"
+                GPP.text = "66 grains per lb"
             }
             else if convertedrh! > 50 && convertedrh! <= 60 && convertedtemp! > 70 && convertedtemp! <= 80 {
-                GPP.text = "92"
+                GPP.text = "92 grains per lb"
             }
             else if convertedrh! > 50 && convertedrh! <= 60 && convertedtemp! > 80 && convertedtemp! <= 90 {
-                GPP.text = "128"
+                GPP.text = "128 grains per lb"
             }
             else if convertedrh! > 50 && convertedrh! <= 60 && convertedtemp! > 90 && convertedtemp! <= 100 {
-                GPP.text = "176"
+                GPP.text = "176 grains per lb"
             }
             
             else if convertedrh! > 60 && convertedrh! <= 70 && convertedtemp! <= 30 {
-                GPP.text = "17"
+                GPP.text = "17 grains per lb"
             }
             else if convertedrh! > 60 && convertedrh! <= 70 && convertedtemp! > 30 && convertedtemp! <= 40 {
-                GPP.text = "26"
+                GPP.text = "26 grains per lb"
             }
             else if convertedrh! > 60 && convertedrh! <= 70 && convertedtemp! > 40 && convertedtemp! <= 50 {
-                GPP.text = "38"
+                GPP.text = "38 grains per lb"
             }
             else if convertedrh! > 60 && convertedrh! <= 70 && convertedtemp! > 50 && convertedtemp! <= 60 {
-                GPP.text = "54"
+                GPP.text = "54 grains per lb"
             }
             else if convertedrh! > 60 && convertedrh! <= 70 && convertedtemp! > 60 && convertedtemp! <= 70 {
-                GPP.text = "78"
+                GPP.text = "78 grains per lb"
             }
             else if convertedrh! > 60 && convertedrh! <= 70 && convertedtemp! > 70 && convertedtemp! <= 80 {
-                GPP.text = "108"
+                GPP.text = "108 grains per lb"
             }
             else if convertedrh! > 60 && convertedrh! <= 70 && convertedtemp! > 80 && convertedtemp! <= 90 {
-                GPP.text = "152"
+                GPP.text = "152 grains per lb"
             }
             else if convertedrh! > 60 && convertedrh! <= 70 && convertedtemp! > 90 && convertedtemp! <= 100 {
-                GPP.text = "208"
+                GPP.text = "208 grains per lb"
             }
             
             else if convertedrh! > 70 && convertedrh! <= 80 && convertedtemp! <= 30 {
-                GPP.text = "19"
+                GPP.text = "19 grains per lb"
             }
             else if convertedrh! > 70 && convertedrh! <= 80 && convertedtemp! > 30 && convertedtemp! <= 40 {
-                GPP.text = "29"
+                GPP.text = "29 grains per lb"
             }
             else if convertedrh! > 70 && convertedrh! <= 80 && convertedtemp! > 40 && convertedtemp! <= 50 {
-                GPP.text = "42"
+                GPP.text = "42 grains per lb"
             }
             else if convertedrh! > 70 && convertedrh! <= 80 && convertedtemp! > 50 && convertedtemp! <= 60 {
-                GPP.text = "62"
+                GPP.text = "62 grains per lb"
             }
             else if convertedrh! > 70 && convertedrh! <= 80 && convertedtemp! > 60 && convertedtemp! <= 70 {
-                GPP.text = "88"
+                GPP.text = "88 grains per lb"
             }
             else if convertedrh! > 70 && convertedrh! <= 80 && convertedtemp! > 70 && convertedtemp! <= 80 {
-                GPP.text = "125"
+                GPP.text = "125 grains per lb"
             }
             else if convertedrh! > 70 && convertedrh! <= 80 && convertedtemp! > 80 && convertedtemp! <= 90 {
-                GPP.text = "173"
+                GPP.text = "173 grains per lb"
             }
             else if convertedrh! > 70 && convertedrh! <= 80 && convertedtemp! > 90 && convertedtemp! <= 100 {
                 GPP.text = "-"
             }
             
             else if convertedrh! > 80 && convertedrh! <= 90 && convertedtemp! <= 30 {
-                GPP.text = "21"
+                GPP.text = "21 grains per lb"
             }
             else if convertedrh! > 80 && convertedrh! <= 90 && convertedtemp! > 30 && convertedtemp! <= 40 {
-                GPP.text = "33"
+                GPP.text = "33 grains per lb"
             }
             else if convertedrh! > 80 && convertedrh! <= 90 && convertedtemp! > 40 && convertedtemp! <= 50 {
-                GPP.text = "48"
+                GPP.text = "48 grains per lb"
             }
             else if convertedrh! > 80 && convertedrh! <= 90 && convertedtemp! > 50 && convertedtemp! <= 60 {
-                GPP.text = "70"
+                GPP.text = "70 grains per lb"
             }
             else if convertedrh! > 80 && convertedrh! <= 90 && convertedtemp! > 60 && convertedtemp! <= 70 {
-                GPP.text = "100"
+                GPP.text = "100 grains per lb"
             }
             else if convertedrh! > 80 && convertedrh! <= 90 && convertedtemp! > 70 && convertedtemp! <= 80 {
-                GPP.text = "140"
+                GPP.text = "140 grains per lb"
             }
             else if convertedrh! > 80 && convertedrh! <= 90 && convertedtemp! > 80 && convertedtemp! <= 90 {
-                GPP.text = "190"
+                GPP.text = "190 grains per lb"
             }
             else if convertedrh! > 80 && convertedrh! <= 90 && convertedtemp! > 90 && convertedtemp! <= 100 {
                 GPP.text = "-"
@@ -262,6 +283,7 @@ class ViewController: UIViewController {
 
         } else {
             errorslabel.text = "Please enter in valid values"
+            GPP.hidden = true
         }
         
     }
@@ -271,6 +293,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         errorslabel.text = ""
         degswitch.tintColor = rpiorange
+        GPP.hidden = true
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -306,6 +329,9 @@ class ViewController: UIViewController {
 //        navigationItem.titleView = imageView
     }
     
+    @IBAction func onTap(sender: AnyObject) {
+        view.endEditing(true)
+    }
     
 
 

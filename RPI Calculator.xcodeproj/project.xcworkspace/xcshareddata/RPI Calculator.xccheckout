@@ -7,18 +7,22 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>3A705A23-5F55-406F-803A-AF79814843DD</string>
 	<key>IDESourceControlProjectName</key>
-	<string>RPI Calculator</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>1EAF6486DC39F89ED6F0FEDBFBF594776BFB3303</key>
 		<string>https://github.com/arashnamvar/GPP-Calculator-App.git</string>
+		<key>96F1EAF0F09E98E6D3EB4ADE7ABE2517AC7BCD82</key>
+		<string>https://github.com/antyang/js_balls.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>RPI Calculator.xcodeproj</string>
+	<string>RPI Calculator.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1EAF6486DC39F89ED6F0FEDBFBF594776BFB3303</key>
 		<string>../..</string>
+		<key>96F1EAF0F09E98E6D3EB4ADE7ABE2517AC7BCD82</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/arashnamvar/GPP-Calculator-App.git</string>
@@ -28,6 +32,14 @@
 	<string>1EAF6486DC39F89ED6F0FEDBFBF594776BFB3303</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>96F1EAF0F09E98E6D3EB4ADE7ABE2517AC7BCD82</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
