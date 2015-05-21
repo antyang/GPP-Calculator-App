@@ -7,7 +7,7 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>3A705A23-5F55-406F-803A-AF79814843DD</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>RPI Calculator</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>1EAF6486DC39F89ED6F0FEDBFBF594776BFB3303</key>
@@ -16,7 +16,7 @@
 		<string>https://github.com/antyang/js_balls.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>RPI Calculator.xcodeproj/project.xcworkspace</string>
+	<string>RPI Calculator.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1EAF6486DC39F89ED6F0FEDBFBF594776BFB3303</key>

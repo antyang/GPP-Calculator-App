@@ -21,12 +21,15 @@ class MainViewController: UIViewController, UIViewControllerTransitioningDelegat
     
     
     // -----
+    
+
+    
     var transitionManager = MenuTransitionManager()
     
-    @IBAction func unwindToMainViewController (sender: UIStoryboardSegue){
-        // bug? exit segue doesn't dismiss so we do it manually...
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
+//    @IBAction func unwindToMainViewController (sender: UIStoryboardSegue){
+//        // bug? exit segue doesn't dismiss so we do it manually...
+//        self.dismissViewControllerAnimated(true, completion: nil)
+//    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let menu = segue.destinationViewController as! MenuViewController
@@ -281,9 +284,11 @@ class MainViewController: UIViewController, UIViewControllerTransitioningDelegat
                 GPP.text = "-"
             }
 
-        } else {
-            errorslabel.text = "Please enter in valid values"
-            GPP.hidden = true
+        }
+        else {
+//            errorslabel.text = "Please enter in valid values"
+//            GPP.hidden = true
+            GPP.text = "Please enter valid values"
         }
         
     }
@@ -301,25 +306,27 @@ class MainViewController: UIViewController, UIViewControllerTransitioningDelegat
         var nav = self.navigationController?.navigationBar
         
 //        degswitch.thumbTintColor = rpiorange
-        if UIScreen.mainScreen().bounds.size.height == 480 {
-            nav?.titleTextAttributes =  [ NSFontAttributeName: UIFont(name: "Arial", size: 22)!,  NSForegroundColorAttributeName: UIColor.whiteColor()]
-            
-
-        } else if UIScreen.mainScreen().bounds.size.height == 568 {
-            nav?.titleTextAttributes =  [ NSFontAttributeName: UIFont(name: "Arial", size: 28)!,  NSForegroundColorAttributeName: UIColor.whiteColor()]
-            
-
-        } else if UIScreen.mainScreen().bounds.size.width == 375 {
-            nav?.titleTextAttributes =  [ NSFontAttributeName: UIFont(name: "Arial", size: 32)!,  NSForegroundColorAttributeName: UIColor.whiteColor()]
-            
-        } else if UIScreen.mainScreen().bounds.size.width == 414 {
-           
-            nav?.titleTextAttributes =  [ NSFontAttributeName: UIFont(name: "Arial", size: 34)!,  NSForegroundColorAttributeName: UIColor.whiteColor()]
-            
-        } else if UIScreen.mainScreen().bounds.size.width >= 768 {
-            nav?.titleTextAttributes =  [ NSFontAttributeName: UIFont(name: "Arial", size: 36)!,  NSForegroundColorAttributeName: UIColor.whiteColor()]
-        }
-
+//        if UIScreen.mainScreen().bounds.size.height == 480 {
+//            nav?.titleTextAttributes =  [ NSFontAttributeName: UIFont(name: "Arial", size: 22)!,  NSForegroundColorAttributeName: UIColor.whiteColor()]
+//            
+//
+//        } else if UIScreen.mainScreen().bounds.size.height == 568 {
+//            nav?.titleTextAttributes =  [ NSFontAttributeName: UIFont(name: "Arial", size: 28)!,  NSForegroundColorAttributeName: UIColor.whiteColor()]
+//            
+//
+//        } else if UIScreen.mainScreen().bounds.size.width == 375 {
+//            nav?.titleTextAttributes =  [ NSFontAttributeName: UIFont(name: "Arial", size: 32)!,  NSForegroundColorAttributeName: UIColor.whiteColor()]
+//            
+//        } else if UIScreen.mainScreen().bounds.size.width == 414 {
+//           
+//            nav?.titleTextAttributes =  [ NSFontAttributeName: UIFont(name: "Arial", size: 34)!,  NSForegroundColorAttributeName: UIColor.whiteColor()]
+//            
+//        } else if UIScreen.mainScreen().bounds.size.width >= 768 {
+//            nav?.titleTextAttributes =  [ NSFontAttributeName: UIFont(name: "Arial", size: 36)!,  NSForegroundColorAttributeName: UIColor.whiteColor()]
+//        }
+//        let navi
+        nav?.titleTextAttributes =  [ NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 22)!,  NSForegroundColorAttributeName: UIColor.whiteColor()]
+    
 //        nav?.titleTextAttributes =  [ NSFontAttributeName: UIFont(name: "Arial", size: 34)!,  NSForegroundColorAttributeName: UIColor.whiteColor()]
         nav?.barTintColor = rpiorange
 //        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))

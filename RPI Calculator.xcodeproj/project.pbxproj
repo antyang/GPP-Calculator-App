@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		032C2F111B0C6FE600E3F2C2 /* MenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032C2F101B0C6FE600E3F2C2 /* MenuTransitionManager.swift */; };
 		032C2F131B0C6FEE00E3F2C2 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032C2F121B0C6FEE00E3F2C2 /* MenuViewController.swift */; };
+		032C2F181B0D9A1F00E3F2C2 /* hamb.png in Resources */ = {isa = PBXBuildFile; fileRef = 032C2F171B0D9A1F00E3F2C2 /* hamb.png */; };
 		03DD255D1B0C1D9300CE8D6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03DD255C1B0C1D9300CE8D6A /* Main.storyboard */; };
 		03DD255F1B0C379100CE8D6A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 03DD255E1B0C379100CE8D6A /* logo.png */; };
 		700D7CD51B0A90FA0099FA27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700D7CD41B0A90FA0099FA27 /* AppDelegate.swift */; };
@@ -31,6 +32,8 @@
 /* Begin PBXFileReference section */
 		032C2F101B0C6FE600E3F2C2 /* MenuTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTransitionManager.swift; sourceTree = "<group>"; };
 		032C2F121B0C6FEE00E3F2C2 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		032C2F141B0D467B00E3F2C2 /* HelveticaNeue.dfont */ = {isa = PBXFileReference; lastKnownFileType = file; path = HelveticaNeue.dfont; sourceTree = "<group>"; };
+		032C2F171B0D9A1F00E3F2C2 /* hamb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamb.png; sourceTree = "<group>"; };
 		03DD255C1B0C1D9300CE8D6A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		03DD255E1B0C379100CE8D6A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		700D7CCF1B0A90FA0099FA27 /* RPI Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RPI Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				03DD255E1B0C379100CE8D6A /* logo.png */,
+				032C2F141B0D467B00E3F2C2 /* HelveticaNeue.dfont */,
+				032C2F171B0D9A1F00E3F2C2 /* hamb.png */,
 				700D7CD41B0A90FA0099FA27 /* AppDelegate.swift */,
 				700D7CD61B0A90FA0099FA27 /* MainViewController.swift */,
 				032C2F121B0C6FEE00E3F2C2 /* MenuViewController.swift */,
@@ -202,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03DD255F1B0C379100CE8D6A /* logo.png in Resources */,
+				032C2F181B0D9A1F00E3F2C2 /* hamb.png in Resources */,
 				700D7CDF1B0A90FA0099FA27 /* LaunchScreen.xib in Resources */,
 				700D7CDC1B0A90FA0099FA27 /* Images.xcassets in Resources */,
 				03DD255D1B0C1D9300CE8D6A /* Main.storyboard in Resources */,
