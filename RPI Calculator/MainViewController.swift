@@ -18,11 +18,21 @@ class MainViewController: UIViewController, UIViewControllerTransitioningDelegat
     @IBOutlet weak var rhinput: UITextField!
     @IBOutlet weak var GPP: UILabel!
     @IBOutlet weak var degswitch: UISegmentedControl!
+    @IBOutlet weak var calcButton: UIButton!
     
-    
+
     // -----
     
 
+//    func keyWasShown(notification: NSNotification){
+//        var info = notification.userInfo!
+//        var keyboardFrame:CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+//        
+//        UIView.animateWithDuration(0.1, animations: { () -> Void in
+//            self.bottomConstraint.constant = keyboardFrame.size.height + 20
+//        })
+//    }
+    
     
     var transitionManager = MenuTransitionManager()
     
@@ -38,6 +48,20 @@ class MainViewController: UIViewController, UIViewControllerTransitioningDelegat
     
     // -----
     
+    // ----- C and F stuff
+    //gpp * 9/5 +32
+    
+    //degswitch outlet made
+    //textLabel made, use GPP
+    
+    
+    
+    
+    
+    
+    // -----
+    
+    
     @IBAction func clear(sender: UIBarButtonItem) {
         errorslabel.text = ""
         rhinput.text = ""
@@ -47,10 +71,11 @@ class MainViewController: UIViewController, UIViewControllerTransitioningDelegat
     }
     @IBAction func calculate(sender: UIButton) {
         GPP.hidden = false
-        
-        
+        view.endEditing(true)
+
         if tempinput.text == "" || rhinput.text == "" {
-            GPP.hidden = true
+            GPP.hidden = false
+            errorslabel.text = "Enter valid values"
         }
         
         var rhinputtext = rhinput.text
@@ -58,10 +83,14 @@ class MainViewController: UIViewController, UIViewControllerTransitioningDelegat
         var tempinputtext = tempinput.text
         var convertedtemp = tempinputtext.toInt()
         
+        
+
+        
+        
         if convertedtemp != nil && convertedrh != nil {
-            
+
             if convertedrh! <= 10 && convertedtemp! <= 30 {
-                GPP.text = "3 grains per lb"
+
             }
             else if convertedrh! <= 10 && convertedtemp! > 30 && convertedtemp! <= 40 {
                 GPP.text = "4 grains per lb"
@@ -284,10 +313,9 @@ class MainViewController: UIViewController, UIViewControllerTransitioningDelegat
                 GPP.text = "-"
             }
 
-        }
-        else {
+        } else {
 //            errorslabel.text = "Please enter in valid values"
-//            GPP.hidden = true
+            GPP.hidden = false
             GPP.text = "Please enter valid values"
         }
         
@@ -296,11 +324,33 @@ class MainViewController: UIViewController, UIViewControllerTransitioningDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        errorslabel.text = ""
-        degswitch.tintColor = rpiorange
+//        errorslabel.text = ""
+        errorslabel.hidden = true
         GPP.hidden = true
+        degswitch.tintColor = rpiorange
+        calcButton.backgroundColor = rpiorange
+        calcButton.tintColor = rpiorange
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
     }
 
+    func keyboardWillShow(sender: NSNotification) {
+        self.view.frame.origin.y -= 150
+    }
+
+    func keyboardWillHide(sender: NSNotification) {
+        self.view.frame.origin.y += 150
+    }
+
+    
+    class MyNavigationController: UINavigationController {
+        override func segueForUnwindingToViewController(toViewController: UIViewController, fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue {
+            return UIStoryboardSegue(identifier: identifier, source: fromViewController, destination: toViewController)
+        }
+    }
+    
+    
     override func viewDidAppear(animated: Bool) {
 
         var nav = self.navigationController?.navigationBar
@@ -329,6 +379,7 @@ class MainViewController: UIViewController, UIViewControllerTransitioningDelegat
     
 //        nav?.titleTextAttributes =  [ NSFontAttributeName: UIFont(name: "Arial", size: 34)!,  NSForegroundColorAttributeName: UIColor.whiteColor()]
         nav?.barTintColor = rpiorange
+        nav?.tintColor = UIColor.whiteColor()
 //        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
 //        imageView.contentMode = .ScaleAspectFit
 //        let image = UIImage(named: "logo")

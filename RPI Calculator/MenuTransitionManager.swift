@@ -154,14 +154,14 @@ class MenuTransitionManager: UIPercentDrivenInteractiveTransition, UIViewControl
                 if(transitionContext.transitionWasCancelled()){
                     
                     transitionContext.completeTransition(false)
-                    // bug: we have to manually add our 'to view' back http://openradar.appspot.com/radar?id=5320103646199808
+                    // ----- EDIT
                     UIApplication.sharedApplication().keyWindow!.addSubview(screens.from.view)
                     
                 }
                 else {
                     
                     transitionContext.completeTransition(true)
-                    // bug: we have to manually add our 'to view' back http://openradar.appspot.com/radar?id=5320103646199808
+                    // ----- EDIT
                     UIApplication.sharedApplication().keyWindow!.addSubview(screens.to.view)
                     
                 }
@@ -207,7 +207,7 @@ class MenuTransitionManager: UIPercentDrivenInteractiveTransition, UIViewControl
         
         // prepare menu to fade in
         menuViewController.view.alpha = 1
-        self.statusBarBackground.backgroundColor = UIColor.blackColor()
+        self.statusBarBackground.backgroundColor = UIColor.whiteColor()/*.colorWithAlphaComponent(0.1)*/
         
 //        menuViewController.textPostIcon.transform = CGAffineTransformIdentity
 //        menuViewController.textPostLabel.transform = CGAffineTransformIdentity

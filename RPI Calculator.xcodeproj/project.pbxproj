@@ -86,14 +86,14 @@
 		700D7CD11B0A90FA0099FA27 /* RPI Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				03DD255E1B0C379100CE8D6A /* logo.png */,
-				032C2F141B0D467B00E3F2C2 /* HelveticaNeue.dfont */,
-				032C2F171B0D9A1F00E3F2C2 /* hamb.png */,
 				700D7CD41B0A90FA0099FA27 /* AppDelegate.swift */,
 				700D7CD61B0A90FA0099FA27 /* MainViewController.swift */,
 				032C2F121B0C6FEE00E3F2C2 /* MenuViewController.swift */,
 				032C2F101B0C6FE600E3F2C2 /* MenuTransitionManager.swift */,
 				03DD255C1B0C1D9300CE8D6A /* Main.storyboard */,
+				03DD255E1B0C379100CE8D6A /* logo.png */,
+				032C2F171B0D9A1F00E3F2C2 /* hamb.png */,
+				032C2F141B0D467B00E3F2C2 /* HelveticaNeue.dfont */,
 				700D7CDB1B0A90FA0099FA27 /* Images.xcassets */,
 				700D7CDD1B0A90FA0099FA27 /* LaunchScreen.xib */,
 				700D7CD21B0A90FA0099FA27 /* Supporting Files */,

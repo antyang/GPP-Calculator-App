@@ -197,7 +197,7 @@
                                 <segue destination="t7s-2U-Fwc" kind="custom" id="WWc-np-Rah"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="stop" id="0Dj-i9-CtP">
+                        <barButtonItem key="rightBarButtonItem" title="Clear" style="plain" id="0Dj-i9-CtP">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="clear:" destination="BYZ-38-t0r" id="0Xp-q9-5Qb"/>
@@ -207,6 +207,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="GPP" destination="B0T-Sy-Jgv" id="k1q-zB-ENN"/>
+                        <outlet property="calcButton" destination="DGs-4O-lje" id="on8-yY-9mR"/>
                         <outlet property="degswitch" destination="DtH-Dg-gbt" id="La9-7T-TBu"/>
                         <outlet property="errorslabel" destination="mho-2d-KGE" id="JoU-II-sXK"/>
                         <outlet property="rhinput" destination="S6Y-3k-RZl" id="vEu-X9-SG7"/>
