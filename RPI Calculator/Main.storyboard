@@ -144,9 +144,12 @@
                                     <constraint firstAttribute="height" constant="28" id="9Wh-CK-U59"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="Celsius"/>
                                     <segment title="Fahrenheit"/>
+                                    <segment title="Celcius"/>
                                 </segments>
+                                <connections>
+                                    <action selector="changed:" destination="BYZ-38-t0r" eventType="valueChanged" id="3TE-9M-xaC"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
