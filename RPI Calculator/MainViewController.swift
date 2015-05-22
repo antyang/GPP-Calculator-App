@@ -13,7 +13,6 @@ class MainViewController: UIViewController, UIViewControllerTransitioningDelegat
     let rpiorange = UIColor(red: 255/255, green: 121/255, blue: 0, alpha: 1)
     var temp: Int?
     var rh: Int?
-    @IBOutlet weak var errorslabel: UILabel!
     @IBOutlet weak var tempinput: UITextField!
     @IBOutlet weak var rhinput: UITextField!
     @IBOutlet weak var GPP: UILabel!
@@ -126,7 +125,6 @@ class MainViewController: UIViewController, UIViewControllerTransitioningDelegat
     
     
     @IBAction func clear(sender: UIBarButtonItem) {
-        errorslabel.text = ""
         rhinput.text = ""
         tempinput.text = ""
         GPP.text = ""
@@ -139,7 +137,6 @@ class MainViewController: UIViewController, UIViewControllerTransitioningDelegat
 
         if tempinput.text == "" || rhinput.text == "" {
             GPP.hidden = false
-            errorslabel.text = "Enter valid values"
         }
         
         var rhinputtext = rhinput.text
@@ -364,7 +361,6 @@ class MainViewController: UIViewController, UIViewControllerTransitioningDelegat
             else if convertedrh! > 70 && convertedrh! <= 80 && convertedtemp > 90 && convertedtemp <= 100 {
                 GPP.text = "-"
             }
-            
             else if convertedrh! > 80 && convertedrh! <= 90 && convertedtemp <= 30 {
                 GPP.text = "21 grains per lb"
             }
@@ -389,20 +385,33 @@ class MainViewController: UIViewController, UIViewControllerTransitioningDelegat
             else if convertedrh! > 80 && convertedrh! <= 90 && convertedtemp > 90 && convertedtemp <= 100 {
                 GPP.text = "-"
             }
+            
+            if UIScreen.mainScreen().bounds.size.height == 480 {
+                let alert = UIAlertView()
+                alert.title = "GPP is"
+                alert.message = "\(GPP.text!)"
+                alert.addButtonWithTitle("Okay")
+                alert.show()
+            }
 
         } else {
-//            errorslabel.text = "Please enter in valid values"
+            
+            if UIScreen.mainScreen().bounds.size.height == 480 {
+                let alert = UIAlertView()
+                alert.title = "error"
+                alert.message = "Please enter valid values"
+                alert.addButtonWithTitle("Okay")
+                alert.show()
+            }
             GPP.hidden = false
             GPP.text = "Please enter valid values"
         }
-        
     }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        errorslabel.text = ""
-        errorslabel.hidden = true
+
         GPP.hidden = true
         degswitch.tintColor = rpiorange
         calcButton.backgroundColor = rpiorange
@@ -413,11 +422,11 @@ class MainViewController: UIViewController, UIViewControllerTransitioningDelegat
     }
 
     func keyboardWillShow(sender: NSNotification) {
-        self.view.frame.origin.y -= 150
+        self.view.frame.origin.y -= (UIScreen.mainScreen().bounds.size.height / 3.5)
     }
 
     func keyboardWillHide(sender: NSNotification) {
-        self.view.frame.origin.y += 150
+        self.view.frame.origin.y += (UIScreen.mainScreen().bounds.size.height / 3.5)
     }
 
     

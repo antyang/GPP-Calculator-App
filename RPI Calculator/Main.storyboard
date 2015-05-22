@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gNt-ab-o50">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gNt-ab-o50">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -194,7 +194,7 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="GPP Calculator" id="AeY-D9-QWf">
-                        <barButtonItem key="leftBarButtonItem" image="hamb.png" style="plain" id="bvW-Rd-zc6">
+                        <barButtonItem key="leftBarButtonItem" image="hamb1.png" style="plain" id="bvW-Rd-zc6">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="t7s-2U-Fwc" kind="custom" id="WWc-np-Rah"/>
@@ -212,7 +212,6 @@
                         <outlet property="GPP" destination="B0T-Sy-Jgv" id="k1q-zB-ENN"/>
                         <outlet property="calcButton" destination="DGs-4O-lje" id="on8-yY-9mR"/>
                         <outlet property="degswitch" destination="DtH-Dg-gbt" id="La9-7T-TBu"/>
-                        <outlet property="errorslabel" destination="mho-2d-KGE" id="JoU-II-sXK"/>
                         <outlet property="rhinput" destination="S6Y-3k-RZl" id="vEu-X9-SG7"/>
                         <outlet property="tempinput" destination="0gP-BF-CYn" id="tcF-Vv-uAr"/>
                     </connections>
@@ -246,7 +245,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="hamb.png" width="26" height="24"/>
+        <image name="hamb1.png" width="26" height="20"/>
         <image name="logo" width="277" height="98"/>
     </resources>
 </document>
