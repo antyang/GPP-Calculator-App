@@ -212,6 +212,7 @@
                         <outlet property="GPP" destination="B0T-Sy-Jgv" id="k1q-zB-ENN"/>
                         <outlet property="calcButton" destination="DGs-4O-lje" id="on8-yY-9mR"/>
                         <outlet property="degswitch" destination="DtH-Dg-gbt" id="La9-7T-TBu"/>
+                        <outlet property="errorlabel" destination="mho-2d-KGE" id="FPT-ij-T98"/>
                         <outlet property="rhinput" destination="S6Y-3k-RZl" id="vEu-X9-SG7"/>
                         <outlet property="tempinput" destination="0gP-BF-CYn" id="tcF-Vv-uAr"/>
                     </connections>

@@ -107,6 +107,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "GPP Calculator"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
